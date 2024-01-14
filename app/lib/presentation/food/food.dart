@@ -18,7 +18,7 @@ class _FoodPageState extends State<FoodPage> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             const Expanded(
-                child: const Placeholder(
+                child: Placeholder(
                     child: Center(child: Text('Beliebte Restaurants')))),
             Expanded(
               child: Center(
@@ -35,14 +35,14 @@ class _FoodPageState extends State<FoodPage> {
                           child: Column(
                             children: [
                               Image.network(imgList.first),
-                              Row(
+                              const Row(
                                 children: [
                                   Icon(Icons.directions),
                                   Text('Auf dem Mark 5'),
                                 ],
                               ),
-                              Text('70478 Stuttgart'),
-                              Text('Tel. 07845 878458')
+                              const Text('70478 Stuttgart'),
+                              const Text('Tel. 07845 878458')
                             ],
                           )))
                 ],

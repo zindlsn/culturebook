@@ -1,3 +1,4 @@
+import 'package:app/presentation/experiments/short_info_page.dart';
 import 'package:app/presentation/explore/explore.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';

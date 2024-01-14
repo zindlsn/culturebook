@@ -41,7 +41,7 @@ class _ShortInfoCardState extends State<ShortInfoCard> {
                 options: CarouselOptions(
                   autoPlay: false,
                   disableCenter: true,
-                  viewportFraction: deviceSize.width > 800.0 ? 0.4 : 1.0,
+                  viewportFraction: deviceSize.width > 800.0 ? 0.2 : 1.0,
                   height: deviceSize.height * 0.45,
                   indicatorMargin: 12.0,
                   enableInfiniteScroll: true,
@@ -73,16 +73,17 @@ var slides = List.generate(
   1,
   (index) => Slide(
     title: 'Slide ${index + 1}',
-    height: 100.0 + index * 50,
+    height: 800.0 + 3 * 50,
     color: Colors.primaries[index % Colors.primaries.length],
   ),
 );
 
-var generalInfo = Slide(
-    color: Colors.black,
-    height: 100.0,
-    title:
-        'Stuttgart (schwäbisch Schduágórd; um das Jahr 950 Stuotgarten; ursprüngliche Bedeutung Stutengarten) ist die Landeshauptstadt des Landes Baden-Württemberg und mit 632.865 Einwohnern (31. Dezember 2022) dessen bevölkerungsreichste Stadt.');
+var generalInfo = Slide(color: Colors.black, height: 600.0, title:
+'''
+Stuttgart (schwäbisch Schduágórd = Stutengarten)
+Landeshauptstadt Baden-Württemberg
+Einwohnerzahl: 632.865
+''');
 
 final List<Widget> sliders = slides
     .map(
@@ -91,18 +92,15 @@ final List<Widget> sliders = slides
         child: ClipRRect(
           borderRadius: const BorderRadius.all(Radius.circular(4.0)),
           child: Container(
-            decoration: BoxDecoration(
-              border: Border.all(color: Colors.blueAccent),
-            ),
+            color: item.color,
             width: double.infinity,
             height: item.height,
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
+            child: Center(
               child: Text(
                 item.title,
                 style: const TextStyle(
-                  color: Colors.black,
-                  fontSize: 14.0,
+                  color: Colors.white,
+                  fontSize: 24.0,
                   fontWeight: FontWeight.bold,
                 ),
               ),

@@ -1,3 +1,4 @@
+import 'package:app/presentation/experiments/short_info_page.dart';
 import 'package:app/presentation/explore/widgets/short_info_dart.dart';
 import 'package:app/presentation/food/food.dart';
 import 'package:carousel_slider/carousel_slider.dart';
@@ -70,7 +71,24 @@ class ExplorePage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                const ShortInfoCard(),
+                Text('Highlights'),
+                const Wrap(
+                  children: [
+                    Chip(
+                      label: Text('General'),
+                    ),
+                    Chip(
+                      label: Text('History'),
+                    ),
+                    Chip(
+                      label: Text('People'),
+                    ),
+                    Chip(
+                      label: Text('Geography'),
+                    ),
+                  ],
+                ),
+                const ComplicatedImageDemo(),
                 const SizedBox(height: 400, child: CarouselWithIndicatorDemo()),
                 Container(
                   color: Colors.black45,
