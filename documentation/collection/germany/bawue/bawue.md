@@ -4,6 +4,7 @@
 
 https://www.stuttgarter-nachrichten.de/inhalt.fun-facts-zehn-dinge-die-sie-noch-nicht-ueber-stuttgart-wussten.905c2798-e132-43bf-9b02-d36b69e96c56.html
 
+https://www.stuttgart.de/wirtschaft/standort/wirtschaftsstandort/ueberraschende-fakten.php
 #### Firmen
 
 Mercedes-Benz, Porsche, and Maybach
