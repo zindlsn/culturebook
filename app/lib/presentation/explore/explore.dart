@@ -1,3 +1,4 @@
+import 'package:app/presentation/explore/widgets/short_info_dart.dart';
 import 'package:app/presentation/food/food.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
@@ -58,114 +59,115 @@ class ExplorePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SafeArea(
-      child: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            const Align(
-              alignment: Alignment.center,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [Text('Stuttgart'), Icon(Icons.edit)],
-              ),
-            ),
-            const Text('Short Info'),
-            const Text(
-                'Stuttgart (schwäbisch Schduágórd; um das Jahr 950 Stuotgarten; ursprüngliche Bedeutung Stutengarten) ist die Landeshauptstadt des Landes Baden-Württemberg und mit 632.865 Einwohnern (31. Dezember 2022) dessen bevölkerungsreichste Stadt.'),
-            const SizedBox(height: 400, child: CarouselWithIndicatorDemo()),
-            Container(
-              color: Colors.black45,
-              child: const Text(
-                'Food',
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: GestureDetector(
-                  onTap: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => FoodPage(food: 'Sauerbraten')));
-                  },
-                  child: const ExploreCard()),
-            ),
-            const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: ExploreCard(),
-            ),
-            const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: ExploreCard(),
-            ),
-            Container(
-              color: Colors.blueGrey,
-              child: StickyHeader(
-                content: const Column(children: [
-                  Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: ExploreCard(),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: ExploreCard(),
-                  ),
-                ]),
-                header: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    Container(
-                      color: Colors.white,
-                      child: const Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Text(
-                          'Fooody Header',
-                          style: TextStyle(fontSize: 24.0),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Container(
-              color: Colors.blueGrey,
-              child: StickyHeader(
-                content: const Column(children: [
-                  Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: ExploreCard(),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: ExploreCard(),
-                  ),
-                ]),
-                header: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    Container(
-                      color: Colors.white,
-                      child: const Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Text(
-                          'Good To Know',
-                          style: TextStyle(fontSize: 24.0),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: ExploreCard(),
-            ),
-          ],
+        appBar: AppBar(
+          title: const Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [Text('Stuttgart'), Icon(Icons.edit)],
+          ),
         ),
-      ),
-    ));
+        body: SafeArea(
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                const ShortInfoCard(),
+                const SizedBox(height: 400, child: CarouselWithIndicatorDemo()),
+                Container(
+                  color: Colors.black45,
+                  child: const Text(
+                    'Food',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                const FoodPage(food: 'Sauerbraten'),
+                          ),
+                        );
+                      },
+                      child: const ExploreCard()),
+                ),
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: ExploreCard(),
+                ),
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: ExploreCard(),
+                ),
+                Container(
+                  color: Colors.blueGrey,
+                  child: StickyHeader(
+                    content: const Column(children: [
+                      Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: ExploreCard(),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: ExploreCard(),
+                      ),
+                    ]),
+                    header: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        Container(
+                          color: Colors.white,
+                          child: const Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Text(
+                              'Fooody Header',
+                              style: TextStyle(fontSize: 24.0),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Container(
+                  color: Colors.blueGrey,
+                  child: StickyHeader(
+                    content: const Column(children: [
+                      Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: ExploreCard(),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: ExploreCard(),
+                      ),
+                    ]),
+                    header: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        Container(
+                          color: Colors.white,
+                          child: const Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Text(
+                              'Good To Know',
+                              style: TextStyle(fontSize: 24.0),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: ExploreCard(),
+                ),
+              ],
+            ),
+          ),
+        ));
   }
 }
 

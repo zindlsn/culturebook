@@ -1,8 +1,9 @@
-import 'package:app/presentation/start/start.dart';
+import 'package:app/presentation/explore/explore.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(
     DevicePreview(
       builder: (context) => const MyApp(),
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const StartPage(),
+      home: ExplorePage(),
     );
   }
 }
